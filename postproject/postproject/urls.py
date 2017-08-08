@@ -15,7 +15,23 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from records import views 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$', views.PostListView.as_view(), name='list_posts'),
+    url(r'^(?P<pk>\d+)/$', views.PostDetailView.as_view(), name='detail_post'),
 ]
+
+
+
+
+
+
+
+
+
+
+
+
+
